@@ -5,8 +5,8 @@ import styles from './Product.module.css';
 export default function Product() {
   return (
     <>
-      <PageNav />
       <main className={styles.product}>
+      <PageNav />
         <section>
           <div>
             <h2>
