@@ -5,8 +5,8 @@ import PageNav from '../components/PageNav';
 export default function Homepage() {
   return (
     <>
-      <PageNav />
       <main className={styles.homepage}>
+      <PageNav />
         <section>
           <h1>
             You travel the world.
@@ -19,7 +19,7 @@ export default function Homepage() {
             how you have wandered the world.
           </h2>
 
-          <Link to='/app'>Go to the app</Link>
+          <Link className='cta' to='/app'>Start tracking now</Link>
         </section>
       </main>
     </>
