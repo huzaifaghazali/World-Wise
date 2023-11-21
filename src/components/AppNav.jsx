@@ -1,8 +1,9 @@
 import React from 'react'
+import styles from './AppNav.module.css';
 
 function AppNav() {
   return (
-    <nav>App navigation</nav>
+    <nav className={styles.nav}>App navigation</nav>
   )
 }
 
