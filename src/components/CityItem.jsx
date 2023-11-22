@@ -1,4 +1,6 @@
 import React from 'react';
+
+import flagemojiToPNG from '../utils/helper';
 import styles from './CityItem.module.css';
 
 const formatDate = (date) =>
@@ -7,17 +9,6 @@ const formatDate = (date) =>
     month: 'long',
     year: 'numeric',
   }).format(new Date(date));
-
-const flagemojiToPNG = (flag) => {
-  let countryCode = Array.from(flag, (codeUnit) => codeUnit.codePointAt())
-    .map((char) => String.fromCharCode(char - 127397).toLowerCase())
-    .join('');
-
-  console.log('country code is = ', countryCode);
-  return (
-    <img src={`https://flagcdn.com/24x18/${countryCode}.png`} alt='flag' />
-  );
-};
 
 function CityItem({ city }) {
   console.log(city);
