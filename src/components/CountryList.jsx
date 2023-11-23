@@ -5,7 +5,6 @@ import CountryItem from './CountryItem';
 import Message from './Message';
 
 function CountryList({ cities, isLoading }) {
-  console.log(cities);
   if (isLoading) return <Spinner />;
 
   if (!cities.length)
@@ -26,7 +25,7 @@ function CountryList({ cities, isLoading }) {
   return (
     <ul className={styles.countryList}>
       {countries.map((country) => (
-        <CountryItem country={country} />
+        <CountryItem country={country} key={country.country} />
       ))}
     </ul>
   );
