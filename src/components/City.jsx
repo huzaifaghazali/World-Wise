@@ -1,42 +1,31 @@
-import { useParams, useSearchParams } from "react-router-dom";
-import styles from "./City.module.css";
+import { useParams, useSearchParams } from 'react-router-dom';
+import styles from './City.module.css';
+import { useCities } from '../contexts/CitiesContext';
+import { useEffect } from 'react';
 
 const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    weekday: "long",
+  new Intl.DateTimeFormat('en', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long',
   }).format(new Date(date));
 
 function City() {
-
   const { id } = useParams();
-  const [searchParams, setSearchParams] =  useSearchParams();
+  const { getCity, currentCity } = useCities();
 
-  const lat = searchParams.get('lat');
-  const lng = searchParams.get('lng');
- 
-  // const [searchParams, setSearchParams] =  useSearchParams();
-
-  // const lat = searchParams.get('lat');
-  // const lng = searchParams.get('lng');
-
-  // TEMP DATA
-  const currentCity = {
-    cityName: "Lisbon",
-    emoji: "🇵🇹",
-    date: "2027-10-31T15:59:59.138Z",
-    notes: "My favorite city so far!",
-  };
+  useEffect(() => {
+    getCity(id);
+    console.log(currentCity);
+  }, [id]);
 
   const { cityName, emoji, date, notes } = currentCity;
 
   return (
     <>
-
-    <h1>City Details {id}</h1>
-    <p>Position: {lat}, {lng}</p>
+      <h1>City Details {id}</h1>
+      {/* <p>Position: {lat}, {lng}</p> */}
     </>
     // <div className={styles.city}>
     //   <div className={styles.row}>
