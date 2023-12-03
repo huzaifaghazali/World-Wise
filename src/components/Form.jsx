@@ -8,6 +8,9 @@ import flagemojiToPNG from '../utils/helper';
 import styles from './Form.module.css';
 import Message from './Message';
 import Spinner from './Spinner';
+import DatePicker from 'react-datepicker';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -61,14 +64,19 @@ function Form() {
     fetchCityData();
   }, [lat, lng]);
 
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   if (isLoadingGeocoding) return <Spinner />;
 
-  if(!lat && !lng) return <Message message='Start by clicking somewhere on the map' />
+  if (!lat && !lng)
+    return <Message message='Start by clicking somewhere on the map' />;
 
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.row}>
         <label htmlFor='cityName'>City name</label>
         <input
@@ -78,16 +86,16 @@ function Form() {
         />
         <span className={styles.flag}>
           <img src={flagUrl} alt='flag' />
-          {/* {emoji} */}
         </span>
       </div>
 
       <div className={styles.row}>
         <label htmlFor='date'>When did you go to {cityName}?</label>
-        <input
+        <DatePicker
           id='date'
-          onChange={(e) => setDate(e.target.value)}
-          value={date}
+          selected={date}
+          onChange={(date) => setDate(date)}
+          dateFormat='dd/MM/yyyy'
         />
       </div>
 
