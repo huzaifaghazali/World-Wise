@@ -35,6 +35,66 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
+    },
+    {
+      "cityName": "Strait of Gibraltar",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2023-12-03T09:47:33.698Z",
+      "notes": "test descripiton",
+      "position": {
+        "lat": "35.96405072573165",
+        "lng": "-5.535570280839262"
+      },
+      "id": 98443198
+    },
+    {
+      "cityName": "Lodine",
+      "country": "Italy",
+      "emoji": "🇮🇹",
+      "date": "2023-12-03T09:51:18.301Z",
+      "notes": "another one",
+      "position": {
+        "lat": "40.14201805503432",
+        "lng": "9.223200534409989"
+      },
+      "id": 98443199
+    },
+    {
+      "cityName": "Bouskene",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2023-12-03T09:54:18.111Z",
+      "notes": "this is test description",
+      "position": {
+        "lat": "36.20296987159521",
+        "lng": "3.182756897578396"
+      },
+      "id": 98443200
+    },
+    {
+      "cityName": "Zaghouan",
+      "country": "Tunisia",
+      "emoji": "🇹🇳",
+      "date": "2023-12-03T09:54:18.111Z",
+      "notes": "this is test description",
+      "position": {
+        "lat": "36.38247817958674",
+        "lng": "10.058949443382062"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Rawalpindi",
+      "country": "Pakistan",
+      "emoji": "🇵🇰",
+      "date": "2023-12-03T09:58:27.133Z",
+      "notes": "This is my home town",
+      "position": {
+        "lat": "33.59527569040597",
+        "lng": "73.07682491610744"
+      },
+      "id": 98443202
     }
   ]
 }
